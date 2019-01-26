@@ -11,35 +11,47 @@ int third = 11;
 int fourth = 10;
 int fifth = 9;
 int sixth = 8;
+int seventh = 7;
+int myLeds[7] = {13, 12, 11, 10, 9, 8, 7};
 
 // pin for the button switch
-int button;
+int button = 2;
 // value to check state of button switch
 int pressed;
 
 void setup() {
   // set all LED pins to OUTPUT
-  pinMode(first,OUTPUT);
-  pinMode(second,OUTPUT);
-  pinMode(third,OUTPUT);
-  pinMode(fourth,OUTPUT);
-  pinMode(fifth,OUTPUT);
-  pinMode(sixth,OUTPUT);
-  
+//  pinMode(myLeds[0],OUTPUT);
+//  pinMode(myLeds[1],OUTPUT);
+//  pinMode(myLeds[2],OUTPUT);
+//  pinMode(myLeds[3],OUTPUT);
+//  pinMode(myLeds[4],OUTPUT);
+//  pinMode(myLeds[5],OUTPUT);
+  for(int i = 0; i < 7; i++){
+    pinMode(myLeds[i],OUTPUT);
+  }
   // set buttin pin to INPUT
-
-  // initialize random seed by noise from analog pin 0 (should be unconnected)
-  randomSeed(analogRead(0));
+  pinMode(button,INPUT);
+  digitalWrite(button, HIGH);
 }
 
 void loop() {
   // if button is pressed - throw the dice
-  pressed;
-  if (pressed == HIGH) {
+  pressed = digitalRead(button);
+  
+  if (pressed == LOW) {
     // remove previous number to LOW
-    
+//    digitalWrite(myLeds[0], LOW);
+//    digitalWrite(myLeds[1], LOW);
+//    digitalWrite(myLeds[2], LOW);
+//    digitalWrite(myLeds[3], LOW);
+//    digitalWrite(myLeds[4], LOW);
+//    digitalWrite(myLeds[5], LOW);
+    for(int i = 0; i < 7; i++){
+      digitalWrite(myLeds[i], LOW);
+    }
     // get a random number in the range [1,6]
-    int randomNum = random(1,7);
+    int randomNum = random(1,8);
     //write IF statements to light up the lights
     digitalWrite(first, HIGH);   
     if (randomNum >= 2){
@@ -54,9 +66,13 @@ void loop() {
     if (randomNum >= 5){
       digitalWrite(fifth, HIGH);
     }
-    if (randomNum = 6){
+    if (randomNum >= 6){
       digitalWrite(sixth, HIGH);
+      }
+    if (randomNum >= 7){
+      digitalWrite(seventh, HIGH);
       }
     }
   
 }
+
