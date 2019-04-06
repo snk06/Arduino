@@ -56,28 +56,29 @@ int noteDurations[] = {
 
 void loop()
 {
-  if (digitalRead(buttonA) == LOW){
+  if (digitalRead(buttonA) == HIGH){
     tone(buzzer, frequencyA);
+    delay(
   }
-  if (digitalRead(buttonB) == LOW){
+  if (digitalRead(buttonB) == HIGH){
     tone(buzzer, frequencyB);
   }
-  if (digitalRead(buttonC) == LOW){
+  if (digitalRead(buttonC) == HIGH){
     tone(buzzer, frequencyC);
   }
-  if (digitalRead(buttonD) == LOW){
+  if (digitalRead(buttonD) == HIGH){
     tone(buzzer, frequencyD);
   }
-  if (digitalRead(buttonE) == LOW){
+  if (digitalRead(buttonE) == HIGH){
     tone(buzzer, frequencyE);
   }
-  if (digitalRead(buttonF) == LOW){
+  if (digitalRead(buttonF) == HIGH){
     tone(buzzer, frequencyF);
   }
-  if (digitalRead(buttonG) == LOW){
+  if (digitalRead(buttonG) == HIGH){
     tone(buzzer, frequencyG);
   }
-  
+  noTone(buzzer);
   //while Button is pressed, play set tone
   //do this for all buttons
   //else play no tone
