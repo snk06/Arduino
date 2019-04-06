@@ -1,0 +1,86 @@
+
+//#include "pitches.h"
+
+//Pick pins for the Buzzer 
+//pick pins for the Piano Buttons
+
+
+  int buttonA = 13;
+  int buttonB = 12;
+  int buttonC = 11;
+  int buttonD = 10;
+  int buttonE = 9;
+  int buttonF = 8;
+  int buttonG = 7;
+  int buzzer = 6;
+  int frequencyA = 440;
+  int frequencyB = 494;
+  int frequencyC = 523;
+  int frequencyD = 587;
+  int frequencyE = 659;
+  int frequencyF = 698;
+  int frequencyG = 784;
+void setup()
+
+
+
+{  Serial.begin(9600);
+  //Initialize Buttons
+  pinMode(buttonA, INPUT);
+  pinMode(buttonB, INPUT);
+  pinMode(buttonC, INPUT);
+  pinMode(buttonD, INPUT);
+  pinMode(buttonE, INPUT);
+  pinMode(buttonF, INPUT);
+  pinMode(buttonG, INPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+
+// notes in the melody:
+int melody[] = {
+//use preset pitches to make a song
+
+
+
+
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+  
+//set duration of notes
+
+};
+
+
+void loop()
+{
+  if (digitalRead(buttonA) == LOW){
+    tone(buzzer, frequencyA);
+  }
+  if (digitalRead(buttonB) == LOW){
+    tone(buzzer, frequencyB);
+  }
+  if (digitalRead(buttonC) == LOW){
+    tone(buzzer, frequencyC);
+  }
+  if (digitalRead(buttonD) == LOW){
+    tone(buzzer, frequencyD);
+  }
+  if (digitalRead(buttonE) == LOW){
+    tone(buzzer, frequencyE);
+  }
+  if (digitalRead(buttonF) == LOW){
+    tone(buzzer, frequencyF);
+  }
+  if (digitalRead(buttonG) == LOW){
+    tone(buzzer, frequencyG);
+  }
+  
+  //while Button is pressed, play set tone
+  //do this for all buttons
+  //else play no tone
+  
+}
+
